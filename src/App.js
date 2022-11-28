@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import React, {useState} from "react";
 import './App.css';
 
 function App() {
+  const [likes, setLikes] = useState(0)
+
+
+  const increment = () => {
+  setLikes(likes + 1)
+  }
+
+  const decrement = () => {
+    setLikes(likes - 1)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>{likes}</h1>
+      <button className="button" onClick={decrement}>decrement</button>
+      <button className="button" onClick={increment}>increment</button>
     </div>
   );
 }
